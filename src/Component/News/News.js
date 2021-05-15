@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
 import {
   FetchNews,
   INCREMENT_PAGE_COUNTER,
@@ -8,19 +9,30 @@ import {
 
 const News = () => {
   const dispatch = useDispatch();
+  const history = useHistory();
 
-  const { data, newsPageCounter } = useSelector((state) => ({
+  const { data, newsPageCounter, fetchingError } = useSelector((state) => ({
     data: state.data,
     newsPageCounter: state.newsPageCounter,
+    fetchingError: state.fetchingError,
   }));
 
   useEffect(() => {
     dispatch(FetchNews());
   }, [dispatch, newsPageCounter]);
 
+  useEffect(() => {
+    if (fetchingError === true) {
+      history.push("/Error");
+    }
+  }, [fetchingError, history]);
+
   return (
     <div>
-      News
+      <span>News</span>
+      <span>
+        About<button onClick={() => history.push("/about")}></button>
+      </span>
       <div>
         <button
           disabled={newsPageCounter === 1 ? true : false}

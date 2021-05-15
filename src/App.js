@@ -24,6 +24,10 @@ function App() {
             <AboutComponent />
           </Route>
 
+          <Route path="/error">
+            <div>Something went wrong....</div>
+          </Route>
+
           <Route>
             <Redirect to="/news" />
           </Route>
