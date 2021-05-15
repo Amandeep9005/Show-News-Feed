@@ -1,26 +1,12 @@
 import News from "./News";
 import React from "react";
-import { fireEvent, render } from "@testing-library/react";
+import { render } from "@testing-library/react";
 import { useSelector, useDispatch } from "react-redux";
-import { useHistory } from "react-router-dom";
 
 jest.mock("react-router-dom", () => ({
   useHistory: jest.fn(),
 }));
 jest.mock("react-redux");
-
-const aemContentValueMock = {
-  "pa-successfullylinked": {
-    connectAnotherText:
-      "Connect another group benefits Plan Administrator User ID",
-    secondaryButton: "Connect123",
-    heading: "You are connected {name}!",
-    backButton: "Back",
-    primaryButton: "Continue",
-    iconAltText: "alt text",
-    description: "description",
-  },
-};
 
 let initialState = {};
 describe("NewsPage", () => {
