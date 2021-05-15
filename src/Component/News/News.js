@@ -43,9 +43,7 @@ const News = () => {
     <div>
       <div style={headerStyles}>
         <div onClick={() => history.push("/news")}>News</div>
-        <div style={aboutStyles} onClick={() => history.push("/about")}>
-          About
-        </div>
+        <div onClick={() => history.push("/about")}>About</div>
       </div>
       <br />
       <PaginationBar>

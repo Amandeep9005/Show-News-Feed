@@ -26,6 +26,9 @@ const headerStyles = {
   color: "white",
   display: "flex",
   height: "30px",
+  justifyContent: "space-between",
+  paddingLeft: "20px",
+  paddingRight: "20px",
 };
 
 const aboutStyles = {
