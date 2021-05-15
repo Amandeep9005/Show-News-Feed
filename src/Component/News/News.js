@@ -29,10 +29,8 @@ const News = () => {
 
   return (
     <div>
-      <span>News</span>
-      <span>
-        About<button onClick={() => history.push("/about")}></button>
-      </span>
+      <span onClick={() => history.push("/news")}>News</span>
+      <span onClick={() => history.push("/about")}>About</span>
       <div>
         <button
           disabled={newsPageCounter === 1 ? true : false}
