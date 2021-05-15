@@ -1,18 +1,5 @@
 import styled from "styled-components";
 
-const newsStyle = {
-  float: "left",
-};
-
-const aboutStyle = {
-  float: "right",
-};
-
-const HeaderBar = styled.div`
-  max-width: 80%;
-  margin-left: 10%;
-`;
-
 const PaginationBar = styled.div`
   display: flex;
   justify-content: center;
@@ -32,15 +19,4 @@ const headerStyles = {
   paddingRight: "20px",
 };
 
-const aboutStyles = {
-  marginLeft: "93%",
-};
-
-export {
-  newsStyle,
-  aboutStyles,
-  HeaderBar,
-  PaginationBar,
-  styleButton,
-  headerStyles,
-};
+export { PaginationBar, styleButton, headerStyles };

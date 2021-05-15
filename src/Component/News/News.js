@@ -7,12 +7,7 @@ import {
   DECREMENT_PAGE_COUNTER,
 } from "./ReducerActions/NewsReducer";
 
-import {
-  PaginationBar,
-  styleButton,
-  headerStyles,
-  aboutStyles,
-} from "./NewsStyled";
+import { PaginationBar, styleButton, headerStyles } from "./NewsStyled";
 
 const News = () => {
   const dispatch = useDispatch();
