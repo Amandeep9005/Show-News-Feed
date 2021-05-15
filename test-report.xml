@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testExecutions version="1">
   <file path="C:\Users\Aman\Desktop\Show-News-Feed\src\Component\News\News.unit.test.js">
+    <testCase name="NewsPage Should display successfully linked page when the component is rendered" duration="45"/>
+  </file>
+  <file path="C:\Users\Aman\Desktop\Show-News-Feed\src\Component\About\About.unit.test.js">
+    <testCase name="Check About page load check About page has loaded" duration="3"/>
+  </file>
+  <file path="C:\Users\Aman\Desktop\Show-News-Feed\src\Utils\SortFunction.unit.test.js">
+    <testCase name="SortFunction check items based on Time" duration="1"/>
+    <testCase name="SortFunction check items based on Time" duration="1"/>
+    <testCase name="SortFunction check items based on comments if times are equal" duration="1"/>
+    <testCase name="SortFunction check items based on comments if times are equal" duration="0"/>
   </file>
 </testExecutions>
