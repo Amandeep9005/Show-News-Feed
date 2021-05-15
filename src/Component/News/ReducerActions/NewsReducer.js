@@ -13,6 +13,7 @@ export const DECREMENT_PAGE_COUNTER = "ACTION_DECREMENT_PAGE_COUNTER";
 export const FetchNews = () => async (dispatch, getState) => {
   dispatch({ type: REQUEST_ACTION_NAME });
   const newsPageCounter = getState().newsPageCounter;
+  console.log("News Api is called with ", newsPageCounter);
 
   const response = await fetch(
     `https://api.hackerwebapp.com/news?page=${newsPageCounter}`,
@@ -22,10 +23,12 @@ export const FetchNews = () => async (dispatch, getState) => {
   );
 
   if (response.status === 200) {
+    console.log("News Api returned results successfully");
     const data = await response.json();
     data.sort(compare);
     dispatch({ type: RESPONSE_ACTION_NAME, data });
   } else {
+    console.log("News Api returned an error");
     dispatch({ type: ERROR_ACTION_NAME });
   }
 };

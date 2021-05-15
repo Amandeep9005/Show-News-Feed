@@ -7,6 +7,13 @@ import {
   DECREMENT_PAGE_COUNTER,
 } from "./ReducerActions/NewsReducer";
 
+import {
+  PaginationBar,
+  styleButton,
+  headerStyles,
+  aboutStyles,
+} from "./NewsStyled";
+
 const News = () => {
   const dispatch = useDispatch();
   const history = useHistory();
@@ -18,28 +25,39 @@ const News = () => {
   }));
 
   useEffect(() => {
+    console.log(
+      "News page loaded fetching news with page index as",
+      newsPageCounter
+    );
     dispatch(FetchNews());
   }, [dispatch, newsPageCounter]);
 
   useEffect(() => {
     if (fetchingError === true) {
+      console.log("there was an error while fetching the news api");
       history.push("/Error");
     }
   }, [fetchingError, history]);
 
   return (
     <div>
-      <span onClick={() => history.push("/news")}>News</span>
-      <span onClick={() => history.push("/about")}>About</span>
-      <div>
+      <div style={headerStyles}>
+        <div onClick={() => history.push("/news")}>News</div>
+        <div style={aboutStyles} onClick={() => history.push("/about")}>
+          About
+        </div>
+      </div>
+      <br />
+      <PaginationBar>
         <button
           disabled={newsPageCounter === 1 ? true : false}
           onClick={() => dispatch({ type: DECREMENT_PAGE_COUNTER })}
-        >{`<`}</button>
+        >{`< prev`}</button>
         <button
+          style={styleButton}
           onClick={() => dispatch({ type: INCREMENT_PAGE_COUNTER })}
-        >{`>`}</button>
-      </div>
+        >{`next >`}</button>
+      </PaginationBar>
       <ol>
         {data &&
           data.length > 0 &&
