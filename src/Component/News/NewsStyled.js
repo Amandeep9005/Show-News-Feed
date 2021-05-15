@@ -14,7 +14,8 @@ const HeaderBar = styled.div`
 `;
 
 const PaginationBar = styled.div`
-  margin-left: 50%;
+  display: flex;
+  justify-content: center;
 `;
 
 const styleButton = {
